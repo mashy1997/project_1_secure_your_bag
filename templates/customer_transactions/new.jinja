@@ -1,0 +1,30 @@
+{% extends "base.jinja"%}
+{% block content %}
+
+<form action="/customer_transactions" method="post">
+
+<div>
+    <label for="description">Description</label>
+    <input type="text" id="description" name="description" required autofocus>
+</div>
+
+<div>
+    <label for="amount">Amount</label>
+    <input type="number" id="amount" name="amount" required>
+</div>
+
+<div>
+    <label for="merchant">Merchant</label>
+    <input type="text" id="merchant" name="merchant" required>
+</div>
+
+<div>
+    <label for="category">Category</label>
+    <input type="text" id="category" name="category" required>
+</div>
+
+<button type="submit">Add Transaction</button>
+
+</form>
+
+{% endblock %}

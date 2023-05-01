@@ -10,7 +10,8 @@ def save(customer_transaction):
     sql = "INSERT INTO customer_transactions (description, amount, merchant_id, category_id) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [customer_transaction.description, customer_transaction.amount, customer_transaction.merchant.id, customer_transaction.category.id]
     results = run_sql(sql, values)
-    customer_transaction.id = results[0]['id']
+    id = results[0]['id']
+    customer_transaction.id = id
     return customer_transaction
 
 def select_all():
@@ -42,3 +43,8 @@ def select(id):
 def delete_all():
     sql = "DELETE FROM customer_transactions"
     run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM customer_transactions WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

@@ -26,12 +26,18 @@ def select(id):
     category = None
     sql = "SELECT * FROM categories WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)[0]
+    results = run_sql(sql, values)
 
-    if result is not None:
+    if results:
+        result= results[0]
         category = Category(result['name'], result['id'])
     return category
 
 def delete_all():
     sql = "DELETE FROM categories"
     run_sql(sql)
+
+def delete():
+    sql = "DELETE FROM categories WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

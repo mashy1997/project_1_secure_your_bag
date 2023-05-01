@@ -1,0 +1,13 @@
+{% extends "base.jinja" %}
+{% block content %}
+
+    <div>
+    <p>{{customer_transaction.description}}</p>
+    <hr>
+    <p>{{customer_transaction.amount}}</p>
+    <p>{{customer_transaction.merchant.name()}}</p>
+    <p>{{customer_transaction.category.name()}}</p>
+    <p><a href="/customer_transactions/{{customer.transaction.id}}/edit">Edit</a></p>
+    </div>
+
+{% endblock %}

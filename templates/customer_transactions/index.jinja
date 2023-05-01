@@ -1,0 +1,17 @@
+{% extends "base.jinja" %}
+{% block content %}
+
+{% for customer_transaction in customer_transactions %}
+    <div class="customer_transaction">
+        <div class="content">
+            <a href="/customer_transactions/{{ customer_transaction.description }}">Description:</a>
+            <div class="description">
+                <span class="amount">Amount:{{customer_transaction.amount}}</span>
+                    <span class="merchant">Merchant:{{customer_transaction.merchant.name}}</span>
+                    <p><i>Category:{{customer_transaction.category.name}}</i></p>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
