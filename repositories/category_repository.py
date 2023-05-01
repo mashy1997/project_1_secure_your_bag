@@ -7,7 +7,8 @@ def save(category):
     sql = "INSERT INTO categories(name) VALUES (%s) RETURNING id"
     values = [category.name]
     results = run_sql( sql, values )
-    category.id = results[0]['id']
+    id = results[0]['id']
+    category.id = id
     return category
 
 def select_all():
@@ -30,3 +31,7 @@ def select(id):
     if result is not None:
         category = Category(result['name'], result['id'])
     return category
+
+def delete_all():
+    sql = "DELETE FROM categories"
+    run_sql(sql)

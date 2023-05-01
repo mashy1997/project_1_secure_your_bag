@@ -7,11 +7,10 @@ import repositories.merchant_repository as merchant_repository
 import repositories.category_repository as category_repository 
 
 def save(customer_transaction):
-    sql = "INSERT INTO customer_transactions (description, amount, merchant_id, category_id) VALUES (%s, %s, %s, %s) RETURNING *"
+    sql = "INSERT INTO customer_transactions (description, amount, merchant_id, category_id) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [customer_transaction.description, customer_transaction.amount, customer_transaction.merchant.id, customer_transaction.category.id]
     results = run_sql(sql, values)
-    id = results[0]['id']
-    customer_transaction.id = id
+    customer_transaction.id = results[0]['id']
     return customer_transaction
 
 def select_all():
@@ -39,3 +38,7 @@ def select(id):
         category = category_repository.select(result['category_id'])
         customer_transaction = CustomerTransaction(result['description'], result['amount'], merchant, category, result['id'])
     return customer_transaction
+
+def delete_all():
+    sql = "DELETE FROM customer_transactions"
+    run_sql(sql)

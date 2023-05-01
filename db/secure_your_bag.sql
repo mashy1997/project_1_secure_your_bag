@@ -9,7 +9,7 @@ CREATE TABLE categories (
 
 CREATE TABLE merchants (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255),
+  name VARCHAR(255)
 );
 
 CREATE TABLE customer_transactions (
@@ -17,5 +17,5 @@ CREATE TABLE customer_transactions (
   description VARCHAR(255),
   amount INT,
   merchant_id INT REFERENCES merchants(id) ON DELETE CASCADE,
-  category_id INT REFERENCES merchants(id) ON DELETE CASCADE,
+  category_id INT REFERENCES categories(id) ON DELETE CASCADE
 );
