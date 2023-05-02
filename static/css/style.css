@@ -37,7 +37,7 @@ nav {
     margin: 0px;
     display: flex;
     justify-content: center;
-    padding-top: 350px
+    padding-top: 200px
 }
 
 nav ul li {
@@ -47,5 +47,13 @@ nav ul li {
 ul {
     display: flex;
     list-style-type: none;
-    gap: 100px
+    gap: 85px
+}
+
+.customer_transaction {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 540px;
+    padding-top: 45px
 }

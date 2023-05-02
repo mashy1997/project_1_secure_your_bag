@@ -1,0 +1,13 @@
+input[type="submit"] {
+    color: #0f3e18;
+  }
+  
+  select {
+   width: 150px;
+   padding: 5px 35px 5px 5px;
+   margin: 15px 0;
+   font-size: 0.8em;
+   -webkit-appearance: none;
+   border: 1px solid #eee;
+   display: block;
+} 

@@ -1,0 +1,11 @@
+.add_merchant_button {
+        display: flex;
+        justify-content: center;
+        padding-top: 50px
+}
+
+.add_category_button {
+    display:flex;
+    justify-content: center;
+    padding-top: 50px
+}

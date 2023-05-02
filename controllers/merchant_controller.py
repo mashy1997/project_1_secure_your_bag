@@ -25,6 +25,21 @@ def create_merchant():
     merchant_repository.save(merchant)
     return redirect('/merchants')
 
+#EDIT, GET 'merchants/<id>/edit'
+@merchants_blueprint.route("/merchants/<id>/edit", methods=['GET'])
+def edit_merchant(id):
+    merchant = merchant_repository.select_all()
+    return render_template('/merchants/edit.jinja', merchant = merchant)
+
+#UPDATE, PUT '/merchants/<id>'
+@merchants_blueprint.route("/merchants/<id>", methods=['POST'])
+def update_merchant(id):
+    name = request.form['name']
+    merchant = Merchant(name)
+    merchant_repository.update(merchant)
+    return redirect('/merchants')
+
+
 # DELETE
 # DELETE '/merchants/<id>'
 @merchants_blueprint.route("/merchants/<id>/delete", methods=['POST'])
