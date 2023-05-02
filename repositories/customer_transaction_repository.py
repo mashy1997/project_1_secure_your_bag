@@ -48,3 +48,8 @@ def delete(id):
     sql = "DELETE FROM customer_transactions WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def update(customer_transaction):
+    sql = "UPDATE customer_transactions SET (description, amount, merchant_id, category_id) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [customer_transaction.description, customer_transaction.amount, customer_transaction.merchant.id, customer_transaction.category.id, customer_transaction.id]
+    run_sql(sql, values)

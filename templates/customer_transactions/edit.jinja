@@ -1,7 +1,7 @@
 {% extends "base.jinja" %}
 {% block content %}
 
-<form action="/customer_transactions/{{customer_transaction.id}}" method="'post">
+<form action="/customer_transactions/{{customer_transaction.id}}" method="POST">
     <div>
         <label for="description">Description</label>
         <input type="text" id="description" name="description" value="{{customer_transaction.description}}" required autofocus>

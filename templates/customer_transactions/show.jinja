@@ -8,6 +8,9 @@
     <p>{{customer_transaction.merchant.name}}</p>
     <p>{{customer_transaction.category.name}}</p>
     <p><a href="/customer_transactions/{{customer_transaction.id}}/edit">Edit</a></p>
+    <form class="delete_form" action="/customer_transactions/{{customer_transaction.id}}/delete" method="POST">
+    <button class="delete_button">Delete Transaction</button>
+</form>
     </div>
 
 {% endblock %}

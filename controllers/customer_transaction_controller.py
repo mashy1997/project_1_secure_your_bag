@@ -45,8 +45,19 @@ def edit_customer_transaction(id):
     categories = category_repository.select_all()
     return render_template('/customer_transactions/edit.jinja', customer_transaction = customer_transaction, merchants = merchants, categories = categories)
 
+#UPDATE, PUT '/customer_transactions/<id>'
+@customer_transactions_blueprint.route("/customer_transactions/<id>", methods=['POST'])
+def update_customer_transaction(id):
+    description = request.form['description']
+    amount = request.form['amount']
+    merchant = merchant_repository.select(request.form['merchant_id'])
+    category = category_repository.select(request.form['category_id'])
+    customer_transaction = CustomerTransaction(description, amount, merchant, category, id)
+    customer_transaction_repository.update(customer_transaction)
+    return redirect(f'/customer_transactions/{id}')
+
 #DELETE '/customer_transactions/<id>'
 @customer_transactions_blueprint.route("/customer_transactions/<id>/delete", methods=['POST'])
-def delete_customer_transaction():
+def delete_customer_transaction(id):
     customer_transaction_repository.delete(id)
     return redirect('/customer_transactions')

@@ -1,0 +1,18 @@
+{% extends "base.jinja" %}
+{% block content%}
+
+<h1>Merchants</h1>
+
+<p>
+    <a class="add_merchant_button" href="/merchants/new">Add New Merchant</a>
+</p>
+
+<ul>
+    {% for merchant in merchants %}
+    <li>
+    <p> {{merchant.name}} </p>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
