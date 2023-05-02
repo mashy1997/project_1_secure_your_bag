@@ -1,0 +1,18 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+
+<h1>Add a Category</h1>
+
+<form action="/categories" method="POST">
+
+<div>
+    <label for="name">Category</label>
+    <input type="text" id="name" name="name" required autofocus>
+</div>
+
+<button type="submit">Add Category</button>
+
+</form>
+
+{% endblock%}

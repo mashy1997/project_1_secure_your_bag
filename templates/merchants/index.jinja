@@ -12,6 +12,11 @@
     <li>
     <p> {{merchant.name}} </p>
     </li>
+    <p>
+        <form action="/merchants/{{ merchant.id }}/delete" method="POST">
+            <input class="delete_button" type="submit" value="delete" />
+        </form>
+    </p>
     {% endfor %}
 </ul>
 

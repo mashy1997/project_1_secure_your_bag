@@ -36,7 +36,7 @@ def delete_all():
     sql = "DELETE FROM merchants"
     run_sql(sql)
 
-def delete():
+def delete(id):
     sql = "DELETE FROM merchants WHERE id = %s"
     values = [id]
     run_sql(sql, values)

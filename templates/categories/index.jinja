@@ -1,0 +1,23 @@
+{% extends "base.jinja" %}
+{% block content%}
+
+<h1>Categories</h1>
+
+<p>
+    <a class="add_category button" href="/categories/new">Add Category</a>
+</p>
+
+<ul>
+    {% for category in categories %}
+    <li>
+    <p> {{category.name}} </p>
+    </li>
+    <p>
+        <form action="/categories/{{ category.id }}/delete" method="POST">
+            <input class="delete_button" type="submit" value="delete" />
+        </form>
+    </p>
+    {% endfor %}
+</ul>
+
+{% endblock %}
