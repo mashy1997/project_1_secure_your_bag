@@ -40,10 +40,10 @@ def show_customer_transaction(id):
 #EDIT, GET 'customer_transactions/<id>/edit'
 @customer_transactions_blueprint.route("/customer_transactions/<id>/edit", methods=['GET'])
 def edit_customer_transaction(id):
-    customer_transaction = customer_transaction.select(id)
+    customer_transaction = customer_transaction_repository.select(id)
     merchants = merchant_repository.select_all()
     categories = category_repository.select_all()
-    return render_template('/customer_transactions/edit.jinja', merchants = merchants, categories = categories)
+    return render_template('/customer_transactions/edit.jinja', customer_transaction = customer_transaction, merchants = merchants, categories = categories)
 
 #DELETE '/customer_transactions/<id>'
 @customer_transactions_blueprint.route("/customer_transactions/<id>/delete", methods=['POST'])

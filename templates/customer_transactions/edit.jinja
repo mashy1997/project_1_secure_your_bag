@@ -9,16 +9,35 @@
 
     <div>
         <label for="amount">Amount</label>
-        <input type="number" id="amount" name="amount" value="{{amount.id}}" required>
+        <input type="number" id="amount" name="amount" value="{{customer_transaction.amount}}" required>
     </div>
 
     <div>
         <label for="merchant">Merchant</label>
-        <input type="merchant" id="merchant" name="merchant" value="{{merchant.id}}" required>
+        <select id="merchant" name="merchant_id">
+            {% for merchant in merchants %}
+                <option value="{{ merchant.id }}"
+                    {% if customer_transaction.merchant.id == merchant.id %} selected = "selected"{% endif %}>
+                    {{merchant.name}}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label for="category">Category</label>
+        <select id="category" name="category_id">
+            {% for category in categories %}
+                <option value="{{ category.id }}"
+                    {% if customer_transaction.category.id == category.id %} selected = "selected"{% endif %}>
+                    {{category.name}}
+                </option>
+            {% endfor %}
         </select>
     </div>
 
     <button type="submit">Edit Transaction</button>
 
 </form>
+
 {% endblock %}

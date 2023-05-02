@@ -15,12 +15,20 @@
 
 <div>
     <label for="merchant">Merchant</label>
-    <input type="text" id="merchant" name="merchant" required>
+    <select id="merchant" name="merchant" required>
+        {% for merchant in merchants %}
+            <option value="{{ merchant.id }}">{{ merchant.name }}</option>
+        {% endfor %}
+    </select>
 </div>
 
 <div>
     <label for="category">Category</label>
-    <input type="text" id="category" name="category" required>
+    <select id="category" name="category" required>
+        {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+        {% endfor %}
+    </select>
 </div>
 
 <button type="submit">Add Transaction</button>
