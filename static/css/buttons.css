@@ -9,3 +9,123 @@
     justify-content: center;
     padding-top: 50px
 }
+
+.delete_button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px 0;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .delete_button:hover {
+    background-color: #d32f2f;
+}
+
+button[type="submit"] {
+    background-color: #2196f3;
+    color: #fff;
+    border: none;
+    padding: 2px 10px;
+    margin: 10px 0;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0d8bf0;
+}
+
+form button[type="submit"] {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: #2196f3;
+  color: white;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+  background-color: #27ae60;
+}
+
+.add_merchant_button {
+  display: block;
+  width: 180px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #2196f3;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.delete_merchant_button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px 0;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
+  .delete_merchant_button:hover {
+    background-color: #da190b;
+  }
+
+  a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+
+.add_category_button {
+  display: inline-block;
+  padding: 12px;
+  background-color: #2196f3;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.delete_category_button {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px 40px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.money_bag {
+  margin-top: 30px;
+	width: 100%;
+	text-align: center;
+}
+
+.money_bag::after {
+  content: "\1F4B0";
+  font-size: 120px;
+	display: block;
+}

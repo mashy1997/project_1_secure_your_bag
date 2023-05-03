@@ -1,5 +1,5 @@
 {% extends "base.jinja" %}
-{% block content%}
+{% block content %}
 
 <h1>Categories</h1>
 
@@ -7,6 +7,7 @@
     <a class="add_category_button" href="/categories/new">Add Category</a>
 </p>
 
+<div class="category_list">
 <ul>
     {% for category in categories %}
     <li>
@@ -14,10 +15,12 @@
     </li>
     <p>
         <form action="/categories/{{ category.id }}/delete" method="POST">
-            <input class="delete_button" type="submit" value="delete" />
+            <input class="delete_category_button" type="submit" value="delete" />
         </form>
     </p>
+    <a href="/categories/{{category.id}}/edit">Edit</a>
     {% endfor %}
 </ul>
+</div>
 
 {% endblock %}

@@ -41,3 +41,13 @@ def delete(id):
     sql = "DELETE FROM categories WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def update(category):
+    sql = "UPDATE categories SET name = %s where id=%s"
+    values = [category.name, category.id]
+    run_sql(sql, values)
+
+# def add_all_amounts(amount):
+#     total_amount = []
+
+#     sql = "SELECT amount FROM categories"

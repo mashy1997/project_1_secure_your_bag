@@ -53,3 +53,11 @@ def update(customer_transaction):
     sql = "UPDATE customer_transactions SET (description, amount, merchant_id, category_id) = (%s, %s, %s, %s) WHERE id = %s"
     values = [customer_transaction.description, customer_transaction.amount, customer_transaction.merchant.id, customer_transaction.category.id, customer_transaction.id]
     run_sql(sql, values)
+
+#def get_total_amount(amount):
+#   sql = "SELECT amount FROM customer_transactions"
+#   values = [customer_transaction.description]
+#   results = run_sql(sql, values)
+
+#   for row in results:
+#   amount = customer_transactions_repository.select(result['amount'])

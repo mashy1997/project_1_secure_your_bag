@@ -25,6 +25,20 @@ def create_category():
     category_repository.save(category)
     return redirect('/categories')
 
+#EDIT, GET 'merchants/<id>/edit'
+@categories_blueprint.route("/categories/<id>/edit", methods=['GET'])
+def edit_category(id):
+    category = category_repository.select(id)
+    return render_template('/categories/edit.jinja', category = category)
+
+#UPDATE, PUT '/categories/<id>'
+@categories_blueprint.route("/categories/<id>", methods= ['POST'])
+def update_category(id):
+    name = request.form['name']
+    category = Category(name, id)
+    category_repository.update(category)
+    return redirect('/categories')
+
 #DELETE, '/categories/<id>'
 @categories_blueprint.route("/categories/<id>/delete", methods = ['POST'])
 def delete_category(id):

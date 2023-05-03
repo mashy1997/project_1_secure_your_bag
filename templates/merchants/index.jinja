@@ -1,5 +1,5 @@
 {% extends "base.jinja" %}
-{% block content%}
+{% block content %}
 
 <h1>Merchants</h1>
 
@@ -14,9 +14,10 @@
     </li>
     <p>
         <form action="/merchants/{{ merchant.id }}/delete" method="POST">
-            <input class="delete_button" type="submit" value="delete">
+            <input class="delete_merchant_button" type="submit" value="delete">
         </form>
     </p>
+    <a href="/merchants/{{merchant.id}}/edit">Edit</a>
     {% endfor %}
 </ul>
 

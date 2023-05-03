@@ -7,6 +7,25 @@ import repositories.category_repository as category_repository
 import repositories.merchant_repository as merchant_repository 
 
 customer_transactions_blueprint = Blueprint("customer_transactions", __name__)
+# @app.before_request
+# def before_request_func():
+#     print("before_request executing!")
+# @customer_transactions_blueprint.context_processor
+# def total():
+#     customer_transactions = customer_transaction_repository.select_all()
+#     total_amount_spent = 0
+#     for spent in customer_transactions:
+#         total_amount_spent += spent.amount
+#     return total_amount_spent
+
+# @customer_transactions_blueprint.route("/")
+# def home():
+#     customer_transactions = customer_transaction_repository.select_all()
+#     total_amount_spent = 0
+#     for spent in customer_transactions:
+#         total_amount_spent += spent.amount
+#     return render_template("base.jinja", customer_transactions = customer_transactions, total_amount_spent = total_amount_spent)
+
 
 @customer_transactions_blueprint.route("/customer_transactions")
 def customer_transactions():
